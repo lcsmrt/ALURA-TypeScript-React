@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './Button.module.scss';
 
-class Button extends React.Component <{
+export default class Button extends React.Component <{
   children: React.ReactNode
   type?: "button" | "submit" | "reset" | undefined
 }> 
@@ -15,5 +15,3 @@ class Button extends React.Component <{
       </button>)
   }
 }
-
-export default Button;

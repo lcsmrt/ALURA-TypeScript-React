@@ -1,31 +1,24 @@
-import { useState } from 'react';
-import Item from './Item/item';
+import { ITask } from '../../types/task';
+import Item from './Item';
 import style from './List.module.scss';
 
-export default function List() {
-  const [tasks, setTasks] = useState([{
-    task: 'React',
-    time: '02:00:00'
-  }, {
-    task: 'JavaScript',
-    time: '01:00:00'
-  }, {
-    task: 'TypeScript',
-    time: '00:45:00'
-  }])
+export interface IProp {
+  tasks: ITask[],
+  selectTask: (selectedTask: ITask) => void
+}
+
+export default function List({ tasks, selectTask }: IProp) {
   return (
     <aside className={style.taskList}>
-      <h2 onClick={() => {
-        setTasks([...tasks, { task: "Conceito de state", time: "00:45:00"}]);
-      }}> Estudos do dia </h2>
+      <h2> Estudos do dia </h2>
       <ul>
-        {tasks.map((item, index) => (
+        {tasks.map((item => (
           <Item 
-            key={index}
-            task={item.task}
-            time={item.time}
+            selectTask={ selectTask }
+            key={ item.id }
+            {...item}
           />
-        ))}
+        )))}
       </ul>
     </aside>
   )
