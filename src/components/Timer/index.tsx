@@ -7,9 +7,10 @@ import { useEffect, useState } from "react";
 
 interface IProp {
   selected: ITask | undefined
+  endTask: () => void
 }
 
-export default function Timer({ selected }: IProp) {
+export default function Timer({ selected, endTask }: IProp) {
   const [time, setTime] = useState<number>();
   
   useEffect(() => {
@@ -23,6 +24,7 @@ export default function Timer({ selected }: IProp) {
         setTime(counter - 1);
         return countdown(counter -1);
       }
+      endTask();
     }, 1000)
   }
 
