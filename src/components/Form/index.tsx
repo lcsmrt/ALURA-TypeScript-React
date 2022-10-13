@@ -13,7 +13,7 @@ export default function Form({ setTasks }: IProp) {
   const [time, setTime] = useState("00:00");
   function addTask(formEvent: React.FormEvent<HTMLFormElement>) {
     formEvent.preventDefault();
-    setTasks(oldTasks => 
+    setTasks((oldTasks) => 
       [
         ...oldTasks, 
         {
