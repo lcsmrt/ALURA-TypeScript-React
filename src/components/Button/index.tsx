@@ -11,7 +11,7 @@ export default function Button({children, type, onClick}: IProp) {
   return(
     <button 
       onClick={onClick} 
-      type={type} 
+      type={type}
       className={style.button}>
       {children}
     </button>)
