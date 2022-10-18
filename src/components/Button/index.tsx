@@ -16,3 +16,5 @@ export default function Button({children, type, onClick}: IProp) {
       {children}
     </button>)
 }
+
+{/*teste*/}
