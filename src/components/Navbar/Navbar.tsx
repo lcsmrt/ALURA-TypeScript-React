@@ -23,6 +23,8 @@ const Navbar = () => {
 export default Navbar;
 
 {/*
-<Button text='Usuários'/>
-<Button text='Hardware'/>
+<div className={style.xyz}>
+  <Button text='Usuários', image={usersIcon}/>
+  <Button text='Hardware', image={hardwareIcon}/>
+</div>
 */}
